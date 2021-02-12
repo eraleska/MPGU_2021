@@ -16,6 +16,16 @@ public class MyClassTest extends Assertions {
 
         int result = myClass.add(10);
 
-        assertEquals(12, result);
+        assertEquals(11, result);
     }
+
+    @Test
+    public void secondTest()
+    {
+        MyClass myClass = new MyClass();
+
+        Throwable res = assertThrows(ArithmeticException.class, () -> myClass.throwsException());
+        assertEquals("Test exception", res.getMessage());
+    }
+    // <тестируемый метод>_<ситуация>_<ожидаемый результат>
 }
